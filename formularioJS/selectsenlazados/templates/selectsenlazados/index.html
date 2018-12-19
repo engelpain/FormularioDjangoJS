@@ -1,0 +1,34 @@
+{% extends "selectsenlazados/base.html" %}
+
+
+{% block content %}
+
+  <a href="add/">+ Agregar un poa</a>
+
+
+  {% if poas %}
+  <table>
+    <thead>
+      <th>POA</th>
+      <th>Descripción</th>
+      <th>Estado</th>
+      <th>Municipio</th>
+      <th>Parroquia</th>
+    </thead>
+    <tbody>
+    {% for poa in poas %}
+          <tr>
+            <td> {{ poa.nombre }} </td>
+            <td> {{ poa.descripcion }} </td>
+            <td> {{ poa.estado }} </td>
+            <td> {{ poa.municipio }} </td>
+            <td> {{ poa.parroquia }} </td>
+          </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No hay poas</p>
+  {% endif %}
+
+{% endblock %}
